@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="parent">
+      <button id="ok">OK</button>
+      <button id="cancel">Cancel</button>
+    </div>
+    
+    <script src="react/build/react.js"></script>
+    <script>
+      document.getElementById('parent').addEventListener('click', function(event) {
+	var button = event.target;
+
+	// do different things based on which button was clicked
+	switch (button.id) {
+	  case 'ok':
+	    console.log('OK');
+	    break;
+	  case 'cancel':
+	    console.log('Cancel');
+	    break;
+	  default:
+	    new Error('Unexpected button ID');
+	};
+      });
+    </script>
+  </body>
+</html>
